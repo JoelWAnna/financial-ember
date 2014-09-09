@@ -1,0 +1,8 @@
+TEST
+{{input value=model.name}}
+{{input value=model.id}}
+{{#unless isOne}}
+{{#link-to 'account' 1}}1{{/link-to}}
+{{else}}
+{{#link-to 'account' 2}}2{{/link-to}}
+{{/unless}}
