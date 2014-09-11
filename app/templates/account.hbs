@@ -1,6 +1,11 @@
 TEST
+{{#link-to 'accounts' }}return{{/link-to}}
 {{input value=model.name}}
 {{input value=model.id}}
+{{input value=model.type}}
+{{input value=model.interest}}
+{{input value=model.budget}}
+{{input value=model.start}}
 {{#unless isOne}}
 {{#link-to 'account' 1}}1{{/link-to}}
 {{else}}

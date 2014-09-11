@@ -2,7 +2,11 @@ import DS from 'ember-data';
 
 var Account = DS.Model.extend({
   accountId : DS.attr('number'),
-  name : DS.attr('string')
+  name : DS.attr('string'),
+  type:  DS.attr('string'),
+  interest: DS.attr('number'),
+  budget: DS.attr('number'),
+  start: DS.attr('number'),
  });
 
 Account.reopenClass({

@@ -1,3 +1,8 @@
-{{#each}}
+<ul>{{#each}}
+<li>
 {{name}}
+
+{{#link-to 'account' id}}{{id}}{{/link-to}} </li>
+
 {{/each}}
+</ul>
