@@ -1,8 +1,9 @@
+{{view Ember.Select content=this optionValuePath="content.id" optionLabelPath="content.name"}}
 <ul>{{#each}}
 <li>
-{{name}}
 
-{{#link-to 'account' id}}{{id}}{{/link-to}} </li>
+
+{{#link-to 'account' id}}{{name}}{{/link-to}} </li>
 
 {{/each}}
 </ul>

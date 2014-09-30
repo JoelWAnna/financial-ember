@@ -1,0 +1,16 @@
+<BR>
+{{#if foobar}}
+{{input value=date}}
+{{input value=model.description}}
+{{#link-to 'account' model.fromAccountId}}{{model.fromAccountId.name}}{{/link-to}}
+{{#link-to 'account' model.toAccountId}}{{model.toAccountId.name}}{{/link-to}}
+{{input value=model.amount}}
+<button {{ action 'save'}} > Save {{model.id}}</button>
+{{else}}
+{{date}}
+{{model.description}}
+{{#link-to 'account' model.fromAccountId}}{{model.fromAccountId.name}}{{/link-to}}
+{{#link-to 'account' model.toAccountId}}{{model.toAccountId.name}}{{/link-to}}
+{{model.amount}}
+<button {{ action 'edit'}} > edit {{model.id}}</button>
+{{/if}}

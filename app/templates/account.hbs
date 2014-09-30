@@ -1,11 +1,18 @@
 TEST
+<button {{action save model}}>save</button>
 {{#link-to 'accounts' }}return{{/link-to}}
+{{#link-to 'transactions' model.id}}transaction{{/link-to}}
 {{input value=model.name}}
-{{input value=model.id}}
 {{input value=model.type}}
 {{input value=model.interest}}
 {{input value=model.budget}}
 {{input value=model.start}}
+{{input value=transactions}}
+{{#each transaction in model.transactions}}
+    {{input value=transaction.id}}
+
+{{/each}}
+{{#link-to 'transaction' 1}}asdf{{/link-to}}
 {{#unless isOne}}
 {{#link-to 'account' 1}}1{{/link-to}}
 {{else}}

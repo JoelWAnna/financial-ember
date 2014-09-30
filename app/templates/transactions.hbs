@@ -1,0 +1,6 @@
+
+{{#link-to 'accounts' }}return{{/link-to}}
+<button {{ action 'newTransaction'}} > Add Transaction</button>
+{{#each transaction in controller}}
+{{render "transaction" transaction.model}}
+{{/each}}

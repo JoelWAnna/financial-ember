@@ -7,6 +7,7 @@ var Account = DS.Model.extend({
   interest: DS.attr('number'),
   budget: DS.attr('number'),
   start: DS.attr('number'),
+  transactions: DS.hasMany('transaction', {async: true, inverse: 'fromAccountId', key: 'id'})
  });
 
 Account.reopenClass({
