@@ -6,8 +6,8 @@ export default Ember.Controller.extend({
  {
  var date = this.get('model.date');
 return;
- console.log(date);
- return date.getYear() + '-' + date.getMonth() + '-' + date.getDay();
+ //console.log(date);
+ //return date.getYear() + '-' + date.getMonth() + '-' + date.getDay();
  }.property('model.date'),
  actions : {
   edit : function () {
@@ -17,9 +17,7 @@ return;
    this.set('foobar', false);
     if (!model)
     {
-    debugger;
     model = this.get('model');
-    console.log(model)
     }
     model.save();
   }
