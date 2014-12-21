@@ -1,6 +1,21 @@
 
 {{#link-to 'accounts' }}return{{/link-to}}
-<button {{ action 'newTransaction'}} > Add Transaction</button>
+{{input value=account_id}}
+{{render "account" account_id}}
+<div>
+<div id="AccountTransactions">
+  <ul>
+    <li class="AT_hdr hdr_date">date</li>
+    <li class="AT_hdr ">description</li>
+    <li class="AT_hdr ">from account</li>
+    <li class="AT_hdr ">to account</li>
+    <li class="AT_hdr hdr_funds">amount</li>
+    <li class="AT_hdr hdr_funds">balance</li>
+    <li class="AT_hdr submit">
+      <button {{ action 'newTransaction'}} class="submit"> Add Transaction</button>
+    </li>
 {{#each transaction in controller}}
-{{render "transaction" transaction.model}}
+{{render "transaction" transaction}}
 {{/each}}
+</ul>
+</div>

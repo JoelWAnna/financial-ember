@@ -1,13 +1,16 @@
 import DS from 'ember-data';
 
 var Account = DS.Model.extend({
-  accountId : DS.attr('number'),
+  //accountId : DS.attr('number'),
   name : DS.attr('string'),
   type:  DS.attr('string'),
   interest: DS.attr('number'),
   budget: DS.attr('number'),
   start: DS.attr('number'),
-  transactions: DS.hasMany('transaction', {async: true, inverse: 'fromAccountId', key: 'id'})
+ // total: DS.hasA('total', {key:'id'}),
+  transactions: DS.hasMany('transaction', {async: true, inverse: 'fromAccountId', key: 'id'}),
+  
+  
  });
 
 Account.reopenClass({

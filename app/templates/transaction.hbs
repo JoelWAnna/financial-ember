@@ -1,16 +1,51 @@
-<BR>
 {{#if foobar}}
-{{input value=date}}
-{{input value=model.description}}
-{{#link-to 'account' model.fromAccountId}}{{model.fromAccountId.name}}{{/link-to}}
-{{#link-to 'account' model.toAccountId}}{{model.toAccountId.name}}{{/link-to}}
-{{input value=model.amount}}
-<button {{ action 'save'}} > Save {{model.id}}</button>
+    <li class="date">
+        {{input value=date}}
+    </li>    
+    <li class="desc">
+      {{input value=description}}
+    </li>
+    <li class="account">
+      {{#link-to 'account' model.fromAccountId}}
+        {{model.fromAccountId.name}}
+      {{/link-to}}
+    </li>
+    <li class="account">
+      {{#link-to 'account' model.toAccountId}}
+        {{model.toAccountId.name}}
+      {{/link-to}}
+    </li>
+    <li class="hdr_funds">
+      {{input value=model.amount}}
+    </li>
+    <li class="hdr_funds">balance</li>
+    <li>
+      <button {{ action 'save'}} > Save {{model.id}}</button>
+    </li>
 {{else}}
-{{date}}
-{{model.description}}
-{{#link-to 'account' model.fromAccountId}}{{model.fromAccountId.name}}{{/link-to}}
-{{#link-to 'account' model.toAccountId}}{{model.toAccountId.name}}{{/link-to}}
-{{model.amount}}
-<button {{ action 'edit'}} > edit {{model.id}}</button>
+    <li class="date">
+        {{date}}
+    </li>
+    <li class="desc">
+      {{model.description}}
+    </li>
+    
+    <li class="account">
+      {{#link-to 'account' model.fromAccountId}}
+        {{model.fromAccountId.name}}
+      {{/link-to}}
+    </li>
+    <li class="account">
+      {{#link-to 'account' model.toAccountId}}
+        {{model.toAccountId.name}}
+      {{/link-to}}
+    </li>
+    
+    <li class="hdr_funds">
+      {{amount}}
+    </li>
+    <li class="hdr_funds">{{total}}</li>
+    <li>
+      <button {{ action 'edit'}} > edit {{model.id}}</button>
+    </li>
 {{/if}}

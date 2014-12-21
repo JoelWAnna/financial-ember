@@ -1,0 +1,13 @@
+{{view Ember.Select content=this optionValuePath="content.id" optionLabelPath="content.name"}}
+{{#each}}
+<ul>
+<li>{{name}}</li>
+<ul>
+{{#each account in account}}
+<li>
+{{#link-to 'account' account.id}}{{account.name}}{{/link-to}} {{account.total}} </li>
+
+{{/each}}
+</ul>
+</ul>
+{{/each}}
