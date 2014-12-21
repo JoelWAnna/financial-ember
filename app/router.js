@@ -1,7 +1,8 @@
 import Ember from 'ember';
+import config from './config/environment';
 
 var Router = Ember.Router.extend({
-  location: FinancialTestENV.locationType,
+  location: config.locationType
   /*
   actions: {
     error: function () {
@@ -9,6 +10,7 @@ var Router = Ember.Router.extend({
     }
   }*/
 });
+
 Router.map(function() {
   //this.resource('accounts', {path: '/'});
   this.resource('account', {path: 'account/:account_id'});
